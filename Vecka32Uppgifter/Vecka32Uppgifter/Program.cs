@@ -10,7 +10,25 @@ namespace Vecka32Uppgifter
     {
         static void Main(string[] args)
         {
-            Console.Write("hello");
+            UppgiftEtt();
+        }
+
+        private static void UppgiftEtt()
+        {
+            int firstNumber;
+
+            for (firstNumber = 25; firstNumber <= 115; firstNumber += 10)
+            {
+                Console.WriteLine(firstNumber);
+            }
+
+            PressAnyKey();
+        }
+
+        private static void PressAnyKey()
+        {
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
     }
 }
