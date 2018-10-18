@@ -10,7 +10,7 @@ namespace Vecka32Uppgifter
     {
         static void Main(string[] args)
         {
-            UppgiftEtt();
+            UppgiftTva();
         }
 
         private static void UppgiftEtt()
@@ -22,6 +22,23 @@ namespace Vecka32Uppgifter
                 Console.WriteLine(firstNumber);
             }
 
+            PressAnyKey();
+        }
+
+        private static void UppgiftTva()
+        {
+            int sum = 0;
+
+            for(int x = 1; x <= 100; x++)
+            {
+                if (x % 7 == 0)
+                {
+                    sum += x;
+                }
+                
+            }
+
+            Console.WriteLine("\nSumman av alla tal mellan 1 och 100 som är delbara med 7 är {0}.", sum);
             PressAnyKey();
         }
 
