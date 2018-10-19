@@ -10,7 +10,7 @@ namespace Vecka32Uppgifter
     {
         static void Main(string[] args)
         {
-            UppgiftTva();
+            SelectionMenu();
         }
 
         private static void UppgiftEtt()
@@ -42,10 +42,57 @@ namespace Vecka32Uppgifter
             PressAnyKey();
         }
 
+        private static void UppgiftTre()
+        {
+            int minutes;
+            int hour;
+            int minutesResult;
+
+            Console.WriteLine("Enter amount of minutes:");
+
+            minutes = Convert.ToInt32(Console.ReadLine());
+
+            hour = minutes / 60;
+            minutesResult = minutes % 60;
+
+            Console.WriteLine("{0} minuter blir: {1} timme(ar) och {2} minut(er).",minutes ,hour, minutesResult);
+
+
+            PressAnyKey();
+        }
+
+        private static void SelectionMenu()
+        {
+            string selection;
+            selection = Console.ReadLine();
+            selection = selection.ToLower();
+
+            switch (selection)
+            {
+                case ("uppgiftett"):
+                    UppgiftEtt();
+                    break;
+                case ("uppgifttvå"):
+                    UppgiftTva();
+                    break;
+                case ("uppgifttre"):
+                    UppgiftTre();
+                    break;
+                case ("exit"):
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice.");
+                    SelectionMenu();
+                    break;
+            }
+
+        }
+
         private static void PressAnyKey()
         {
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
+
     }
 }
