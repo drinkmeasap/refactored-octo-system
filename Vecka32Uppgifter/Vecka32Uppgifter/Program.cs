@@ -76,6 +76,7 @@ namespace Vecka32Uppgifter
 
         private static void UppgiftFem()
         {
+
             string euroInput;
             decimal euro;
             decimal kronor;
@@ -93,7 +94,7 @@ namespace Vecka32Uppgifter
                 euro = Decimal.Parse(euroInput);
                 kronor = Decimal.Parse(kronorInput);
                 result = kronor / euro;
-                Console.WriteLine("\n\n{0} kronor är ca {1} euro.",kronor, Math.Round(result));
+                Console.WriteLine("\n\n{0} kronors is around {1} euro.",kronor, Math.Round(result));
                 PressAnyKey();
             }
 
