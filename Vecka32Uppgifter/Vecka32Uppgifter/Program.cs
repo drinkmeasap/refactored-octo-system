@@ -9,7 +9,7 @@ namespace Vecka32Uppgifter
 {
     class Program
     {
-        
+
         private static void UppgiftEtt()
         {
             int firstNumber;
@@ -108,6 +108,62 @@ namespace Vecka32Uppgifter
 
         }
 
+        private static void UppgiftSex()
+        {
+            int one;
+            int two;
+            int sum;
+            int product;
+            int average;
+
+            try
+            {
+                Console.WriteLine("\nEnter first int:");
+                one = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("\nEnter second int:");
+                two = Convert.ToInt32(Console.ReadLine());
+
+                sum = one + two;
+                product = one * two;
+
+                Console.WriteLine("Sum: {0}", sum);
+                Console.WriteLine("Product: {0}", product);
+
+                if (one > two)
+                {
+                    Console.WriteLine("Number One is larger!");
+                }
+                
+                else if (one < two)
+                {
+                    Console.WriteLine("Number Two is larger!");
+                }
+
+                else if (one == two)
+                {
+                    Console.Write("Number One and Two are equal!");
+                }
+
+
+                PressAnyKey();
+
+            }
+
+            catch(Exception)
+            {
+                Console.WriteLine("\n\nSomething went wrong. ¯|_(ツ)_/¯");
+                UppgiftSex();
+            }
+
+
+
+
+
+
+
+        }
+
         private static void SelectionMenu()
         {
             string selection;
@@ -130,6 +186,9 @@ namespace Vecka32Uppgifter
                     break;
                 case ("uppgiftfem"):
                     UppgiftFem();
+                    break;
+                case ("uppgiftsex"):
+                    UppgiftSex();
                     break;
                 case ("exit"):
                     break;
