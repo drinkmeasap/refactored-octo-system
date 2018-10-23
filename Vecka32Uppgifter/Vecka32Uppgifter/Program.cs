@@ -99,7 +99,7 @@ namespace Vecka32Uppgifter
 
             catch (System.FormatException)
             {
-                Console.WriteLine("Format exception");
+                Console.WriteLine("Format exception!\n\n\n\n");
                 UppgiftFem();
             }
 
