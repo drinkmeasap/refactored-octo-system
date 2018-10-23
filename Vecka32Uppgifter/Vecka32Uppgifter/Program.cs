@@ -82,7 +82,7 @@ namespace Vecka32Uppgifter
             string kronorInput;
             decimal result;
 
-            Console.WriteLine("Enter value of Euro:");
+            Console.WriteLine("\nEnter value of Euro:");
             euroInput = Console.ReadLine();
 
             Console.WriteLine("\nEnter amount of kronor:");
@@ -93,7 +93,8 @@ namespace Vecka32Uppgifter
                 euro = Decimal.Parse(euroInput);
                 kronor = Decimal.Parse(kronorInput);
                 result = kronor / euro;
-                Console.WriteLine(result);
+                Console.WriteLine("\n\n{0} kronor är ca {1} euro.",kronor, Math.Round(result));
+                PressAnyKey();
             }
 
             catch (System.FormatException)
@@ -102,8 +103,7 @@ namespace Vecka32Uppgifter
                 UppgiftFem();
             }
 
-
-            PressAnyKey();
+            
 
         }
 
