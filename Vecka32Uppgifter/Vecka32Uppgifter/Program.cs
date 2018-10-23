@@ -85,9 +85,15 @@ namespace Vecka32Uppgifter
             Console.WriteLine("Enter value of Euro:");
             euroInput = Console.ReadLine();
 
+            Console.WriteLine("\nEnter amount of kronor:");
+            kronorInput = Console.ReadLine();
+
             try
             {
                 euro = Decimal.Parse(euroInput);
+                kronor = Decimal.Parse(kronorInput);
+                result = kronor / euro;
+                Console.WriteLine(result);
             }
 
             catch (System.FormatException)
@@ -95,17 +101,7 @@ namespace Vecka32Uppgifter
                 Console.WriteLine("Format exception");
                 UppgiftFem();
             }
-            
 
-            Console.WriteLine("\nEnter amount of kronor:");
-            kronorInput = Console.ReadLine();
-
-            kronor = Decimal.Parse(kronorInput);
-
-            result = kronor / euro;
-
-
-            Console.WriteLine(result);
 
             PressAnyKey();
 
