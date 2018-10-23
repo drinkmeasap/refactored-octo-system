@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Vecka32Uppgifter
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            SelectionMenu();
-        }
-
+        
         private static void UppgiftEtt()
         {
             int firstNumber;
@@ -55,10 +52,63 @@ namespace Vecka32Uppgifter
             hour = minutes / 60;
             minutesResult = minutes % 60;
 
-            Console.WriteLine("{0} minuter blir: {1} timme(ar) och {2} minut(er).",minutes ,hour, minutesResult);
+            Console.WriteLine("{0} minut(er) blir: {1} timme(ar) och {2} minut(er).",minutes ,hour, minutesResult);
 
 
             PressAnyKey();
+        }
+
+        private static void UppgiftFyra()
+        {
+            int month;
+            int year;
+            int result;
+
+
+            Console.WriteLine("Enter amount of months:");
+            month = Convert.ToInt32(Console.ReadLine());
+            year = month / 12;
+            result = month % 12;
+            Console.WriteLine("{0} månad(er) blir: {1} år och {2} månad(er).", month, year, result);
+            PressAnyKey();
+
+        }
+
+        private static void UppgiftFem()
+        {
+            string euroInput;
+            decimal euro;
+            decimal kronor;
+            string kronorInput;
+            decimal result;
+
+            Console.WriteLine("Enter value of Euro:");
+            euroInput = Console.ReadLine();
+
+            try
+            {
+                euro = Decimal.Parse(euroInput);
+            }
+
+            catch (System.FormatException)
+            {
+                Console.WriteLine("Format exception");
+                UppgiftFem();
+            }
+            
+
+            Console.WriteLine("\nEnter amount of kronor:");
+            kronorInput = Console.ReadLine();
+
+            kronor = Decimal.Parse(kronorInput);
+
+            result = kronor / euro;
+
+
+            Console.WriteLine(result);
+
+            PressAnyKey();
+
         }
 
         private static void SelectionMenu()
@@ -78,6 +128,12 @@ namespace Vecka32Uppgifter
                 case ("uppgifttre"):
                     UppgiftTre();
                     break;
+                case ("uppgiftfyra"):
+                    UppgiftFyra();
+                    break;
+                case ("uppgiftfem"):
+                    UppgiftFem();
+                    break;
                 case ("exit"):
                     break;
                 default:
@@ -92,6 +148,12 @@ namespace Vecka32Uppgifter
         {
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
+        }
+
+
+        static void Main(string[] args)
+        {
+            SelectionMenu();
         }
 
     }
