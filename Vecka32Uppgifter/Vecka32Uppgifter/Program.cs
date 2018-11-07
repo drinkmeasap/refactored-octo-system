@@ -126,8 +126,10 @@ namespace Vecka32Uppgifter
 
                 sum = one + two;
                 product = one * two;
+                average = (one + two) / 2;
 
                 Console.WriteLine("Sum: {0}", sum);
+                Console.WriteLine("Average: {0}", average);
                 Console.WriteLine("Product: {0}", product);
 
                 if (one > two)
@@ -164,6 +166,43 @@ namespace Vecka32Uppgifter
 
         }
 
+        private static void UppgiftSju()
+        {
+            int betygEtt;
+            int betygTwo;
+            int betygTre;
+            int betygFyra;
+            int betygFem;
+
+            betygEtt = Convert.ToInt32(Console.ReadLine());
+            betygTwo = Convert.ToInt32(Console.ReadLine());
+            betygTre = Convert.ToInt32(Console.ReadLine());
+            betygFyra = Convert.ToInt32(Console.ReadLine());
+            betygFem = Convert.ToInt32(Console.ReadLine());
+
+            int[] betyg = new int[] { betygEtt, betygTwo, betygTre, betygFyra, betygFem };
+
+
+            IEnumerable<int> betygQuery =
+                from b in betyg
+                where b > 49
+                select b;
+
+
+            foreach (int i in betygQuery)
+            {
+                Console.Write(i + " ");
+            }
+
+            PressAnyKey();
+
+
+
+            
+
+            
+        }
+
         private static void SelectionMenu()
         {
             string selection;
@@ -190,6 +229,9 @@ namespace Vecka32Uppgifter
                 case ("uppgiftsex"):
                     UppgiftSex();
                     break;
+                case ("uppgiftsju"):
+                    UppgiftSju();
+                    break;
                 case ("exit"):
                     break;
                 default:
@@ -205,6 +247,9 @@ namespace Vecka32Uppgifter
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
+
+
+
 
 
         static void Main(string[] args)
