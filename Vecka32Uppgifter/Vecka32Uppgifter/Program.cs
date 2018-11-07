@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Vecka32Uppgifter
@@ -201,10 +199,41 @@ namespace Vecka32Uppgifter
             
 
             
+        } // Egentligen också uppgift 6 men du råkade skriva uppgift 6 två gånger
+
+        private static void UppgiftAtta() // Egentligen uppgift sju fast pga du skrev uppgift 6 två gånger så blev det 8
+        {
+            int[] hastigheter = new int[] { 55, 64, 50, 62, 45, 0 };
+
+            Console.WriteLine("\nBilhastigheter i Km/h \n");
+            foreach (int hastighet in hastigheter)
+            {
+                Console.WriteLine(hastighet);
+            }
+
+            hastigheter = hastigheter.Where(x => x != 0).ToArray(); // Använder LINQ för att tabort 0
+
+
+            int hogstaHastighet = hastigheter.Max();
+            int lagstaHastighet = hastigheter.Min();
+            int summa = hastigheter.Sum();
+            int medelHastighet = summa / hastigheter.Length;
+
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine("Högsta hastighet: {0}", hogstaHastighet);
+            Console.WriteLine("Lägsta hastighet: {0}", lagstaHastighet);
+            Console.WriteLine("Medel hastighet: {0}", medelHastighet);
+
+            PressAnyKey();
+
+
         }
 
         private static void SelectionMenu()
         {
+            Console.WriteLine("Enter selection:");
+
             string selection;
             selection = Console.ReadLine();
             selection = selection.ToLower();
@@ -232,6 +261,9 @@ namespace Vecka32Uppgifter
                 case ("uppgiftsju"):
                     UppgiftSju();
                     break;
+                case ("uppgiftåtta"):
+                    UppgiftAtta();
+                    break;
                 case ("exit"):
                     break;
                 default:
@@ -247,8 +279,6 @@ namespace Vecka32Uppgifter
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
         }
-
-
 
 
 
